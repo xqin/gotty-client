@@ -10,6 +10,7 @@ Idea from gotty-client Go Version: https://github.com/moul/gotty-client
 
 * `MAC OS` + `iTerm2/Terminal`
 * `Windows` + `cmd.exe/powershell.exe` (not working in `git bash`)
+* Only Support GoTTY v2.* version.
 
 ## Usage:
 
@@ -17,4 +18,6 @@ Idea from gotty-client Go Version: https://github.com/moul/gotty-client
 $ npm install -g github:xqin/gotty-client
 
 $ gotty-client 'http://xxxx/yyy?arg=xxxxxxxxxx'
+
+$ gotty-client 'http://xxxx/yyy?arg=xxxxxxxxxx' 'user:password'
 ```

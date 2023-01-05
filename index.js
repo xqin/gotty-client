@@ -27,15 +27,24 @@ const (
 */
 
 (async () => {
-  const [,, url] = process.argv
+  const [,, url, credential] = process.argv
 
   if (/^https?:\/\/.+/.test(url) === false) {
-    console.log("Usage: gotty-client 'gotty web url'")
+    console.log("Usage: gotty-client 'gotty web url' [credential]")
     return
+  }
+
+  let headers
+
+  if (credential) {
+    headers = {
+      Authorization: `Basic ${Buffer.from(credential, 'utf8').toString('base64')}`
+    }
   }
 
   const http = require('request').defaults({
     timeout: 3000, // http request global timeout
+    headers,
     strictSSL: false // ignore ssl verify
   })
 
