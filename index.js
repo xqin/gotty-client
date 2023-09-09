@@ -123,7 +123,7 @@ const (
     process.stdin.on('data', data => {
       // console.log('Send', JSON.stringify(data.toString('hex')))
 
-      ws.send(1 + data.toString('binary'))
+      ws.send(1 + data.toString('utf8'))
     })
   })
 
