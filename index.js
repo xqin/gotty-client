@@ -14,6 +14,8 @@ const (
   SetPreferences = '4'
   // Make terminal to reconnect
   SetReconnect = '5'
+  // Set Send Buffer Size
+  msgSetBufferSize = '6'
 
   // Unknown message type, maybe sent by a bug
   UnknownInput = '0'
@@ -154,6 +156,8 @@ const (
         // )
         break
       case '2': // Pong
+      case '5': // SetReconnect
+      case '6': // SetBufferSize
         break
       case '3': // SetWindowTitle
         console.log('SetWindowTitle', body)
